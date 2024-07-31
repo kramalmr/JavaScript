@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>TUGAS PRAKTEK MUHAMMAD AKRAM ALMAIR</h1>
+
+    <!-- nomor 1 -->
+    <p style="width: 50%">
+      1. Seorang pengunjung kebun binatang berumur 5 tahun. Menurut kebijakan
+      kebun binatang, pengunjung yang berumur lebih dari 5 tahun harus membayar
+      tiket penuh, pengunjung yang berumur antara 2 hingga 5 tahun harus
+      membayar setengah harga, dan pengunjung di bawah 2 tahun tidak boleh
+      masuk.
+    </p>
+    <button onclick="umur1()" style="margin-bottom: 20px">Berapa umur?</button>
+
+    <!-- nomor 2 -->
+    <p style="width: 50%">
+      2. Buatlah program cek apakah usia seseorang sudah berhak mendapatkan SIM
+      atau belum. Test Usia : 8, 17, 28
+    </p>
+    <button onclick="umur2()" style="margin-bottom: 20px">Berapa umur?</button>
+
+    <!-- nomor 3 -->
+    <p style="width: 50%">
+      3. Buatlah program untuk cek apakah angka tersebut positive, negative atau
+      netral. Test Angka : 0, -5 , 25
+    </p>
+    <button onclick="nomor1()" style="margin-bottom: 20px">
+      Berapa nomor?
+    </button>
+
+    <!-- nomor 4 -->
+    <p style="width: 50%">
+      4. Tentukan posisi menurut koordinat x dan y dari game Steve!
+    </p>
+    <button onclick="nomor2()" style="margin-bottom: 20px">
+      Berapa koordinat?
+    </button>
+
+    <!-- nomor 5 -->
+    <p style="width: 50%">
+      5. Anda sedang membuat sistem e-commerce. Anda perlu menulis kode untuk
+      menghitung diskon berdasarkan total pembelian. Jika total pembelian lebih
+      dari atau sama dengan 200, diskon 15% diterapkan. Jika total pembelian
+      antara 100 dan 199, diskon 10% diterapkan. Jika total pembelian kurang
+      dari 100, tidak ada diskon yang diterapkan. Tampilkan total pembelian
+      setelah diskon di konsol.
+    </p>
+    <button onclick="nomor3()" style="margin-bottom: 20px">
+      Berapa total pembelian?
+    </button>
+
+    <!-- nomor 6 -->
+    <p style="width: 50%">
+      6. Anda membuat form registrasi yang memerlukan validasi usia pengguna.
+      Tulis kode JavaScript yang memeriksa apakah usia pengguna memenuhi syarat
+      untuk mendaftar. Syaratnya adalah usia harus lebih dari atau sama dengan
+      18 tahun. Tampilkan pesan yang sesuai di konsol, yaitu "Registrasi
+      berhasil" jika usia memenuhi syarat atau "Registrasi gagal" jika tidak
+      memenuhi syarat.
+    </p>
+    <button onclick="umur3()" style="margin-bottom: 20px">Berapa umur?</button>
+  </body>
+  <script>
+    function umur1() {
+      let umur1 = prompt("Berapa umur anda?");
+      if (umur1 >= 6) {
+        alert("Anda harus membayar tiket penuh");
+      } else if (umur1 >= 2 && umur1 <= 5) {
+        alert("Anda harus membayar setengah tiket");
+      } else {
+        alert("Anda tidak boleh masuk");
+      }
+    }
+
+    function umur2() {
+      let umur2 = prompt("Berapa umur anda?");
+      if (umur2 >= 17) {
+        alert("Anda boleh mendapatkan SIM");
+      } else {
+        alert("Anda tidak boleh mendapatkan SIM");
+      }
+    }
+
+    function nomor1() {
+      let nomor1 = prompt("Berapa nomor anda?");
+      if (nomor1 > 0) {
+        alert("Positif");
+      } else if (nomor1 < 0) {
+        alert("Negatif");
+      } else {
+        alert("Netral");
+      }
+    }
+
+    function nomor2() {
+      let x = prompt("Berapa x?");
+      let y = prompt("Berapa y?");
+      if (x > 0 && y > 0) {
+        alert("Atas Kanan");
+      } else if (x < 0 && y > 0) {
+        alert("Atas Kiri");
+      } else if (x < 0 && y < 0) {
+        alert("Bawah Kiri");
+      } else if (x > 0 && y < 0) {
+        alert("Bawah Kanan");
+      }
+    }
+
+    function nomor3() {
+      let total = prompt("Berapa total pembelian?");
+      if (total >= 200) {
+        alert("Diskon 15% ");
+        alert("Total pembelian anda sebesar " + (total - (total * 15) / 100));
+      } else if (total >= 100 && total <= 199) {
+        alert("Diskon 10%");
+        alert("Total pembelian anda sebesar " + (total - (total * 10) / 100));
+      } else {
+        alert("Tidak ada diskon");
+        alert("Total pembelian anda sebesar " + total);
+      }
+    }
+
+    function umur3() {
+      let umur = prompt("Berapa umur anda?");
+      if (umur >= 18) {
+        alert("Registrasi Berhasil");
+      } else {
+        alert("Registrasi Gagal");
+      }
+    }
+  </script>
+</html>
