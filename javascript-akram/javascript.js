@@ -1,1 +1,1 @@
-document.write("Node JavaScript")
+console.log("Node JavaScript");

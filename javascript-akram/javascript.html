@@ -6,10 +6,60 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" id="result">
+    <br>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <br>
+    <button onclick="number('1')">1</button>
+    <button onclick="number('2')">2</button>
+    <button onclick="number('3')">3</button>
+    <button onclick="number('+')">+</button>
+    <br>
+    <button onclick="number('4')">4</button>
+    <button onclick="number('5')">5</button>
+    <button onclick="number('6')">6</button>
+    <button onclick="number('-')">-</button>
+    <br>
+    <button onclick="number('7')">7</button>
+    <button onclick="number('8')">8</button>
+    <button onclick="number('9')">9</button>
+    <button onclick="number('*')">*</button>
+    <br>
+    <button onclick="number('0')">0</button>
+    <button onclick="clear()">C</button>
+    <button onclick="calculate('/')">/</button>
+    <button onclick="calculate()">=</button>
     <script>
-        document.write("Hello World")
-        document.write("<br>")
+        var result = document.getElementById('result');
+        var num1 = 0;
+        var operator = '';
+
+        function number(value) {
+            result.value += value;
+        }
+
+        function calculate(value) {
+            if (operator == '') {
+                num1 = parseFloat(result.value);
+                operator = value;
+                result.value = '';
+            } else {
+                var num2 = parseFloat(result.value);
+                result.value = eval(num1 + operator + num2);
+                num1 = parseFloat(result.value);
+                operator = value;
+                result.value = '';
+            }
+        }
+
+        function clear() {
+            result.value = '';
+            num1 = 0;
+            operator = '';
+        }
     </script>
-    <script src="javascript.js"></script>
 </body>
 </html>
