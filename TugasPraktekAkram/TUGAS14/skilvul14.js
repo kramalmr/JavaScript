@@ -18,9 +18,9 @@ messages();
 // SOAL 2
 function ambilDataUser() {
   fetch("https://jsonplaceholder.typicode.com/users")
-    .then(function (response) {
+.then(function (response) {
       return response.json();
-    })
+    })    
     .then(function (users) {
       console.log(users);
     });

@@ -56,6 +56,9 @@ Promise.all([fetchStep1, fetchStep2, fetchStep3])
   .then((result) => {
     console.log(result);
   })
+  .then((result) => {
+    console.log("All Steps Completed!");
+  })
   .catch((error) => {
     console.log(error);
   });
