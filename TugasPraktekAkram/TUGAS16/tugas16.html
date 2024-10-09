@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 16 AKROM</title>
+  </head>
+  <body>
+    <!-- SOAL 1 -->
+    <h3>soal 1</h3>
+    <div id="title">Hello, World AKROM!</div>
+    <p style="width: 45%" class="text">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
+      provident, veritatis similique, architecto deserunt cum optio odio velit
+      eveniet quas porro consequatur tenetur inventore.
+    </p>
+    <span class="text">Lorem ipsum dolor sit amet.</span>
+
+    <!-- SOAL 2 -->
+    <h3>soal 2</h3>
+    <div class="konten">Teks Awal!</div>
+
+    <!-- SOAL 3 -->
+    <h3>soal 3</h3>
+    <div >
+      <ul id="kontenDaftar">
+
+      </ul>
+    </div>
+
+    <!-- SOAL 4 -->
+     <h3>soal 4</h3>
+     <div id="colorBox">Ini adalah teks yang akan diubah warnanya</div>
+     <button onclick="changeColor()">Change Color</button>
+  </body>
+  <script>
+    // SOAL 1
+    const title = document.getElementById("title");
+    title.style.color = "red";
+
+    const text = document.querySelector(".text");
+    text.innerHTML = "Elemen pertama yang diubah!";
+
+    // SOAL 2
+    const konten = document.getElementsByClassName("konten");
+    konten[0].innerHTML = "<strong>Teks Baru!</strong>";
+    console.log(konten[0].innerHTML);
+    console.log(konten[0].innerText);
+
+    konten[0].innerText = "         KOTAK";
+    console.log(konten[0].innerHTML);
+    console.log(konten[0].innerText);
+
+    konten[0].textContent = "TEKS NEW";
+    console.log(konten[0].innerHTML);
+
+    // SOAL 3
+    const kontenDaftar = document.getElementById("kontenDaftar");
+    const daftar = ["Item 1", "Item 2", "Item 3"];
+    for (let i = 0; i < daftar.length; i++) {;
+        const newDaftar = document.createElement("li");
+        newDaftar.innerHTML = daftar[i];
+        kontenDaftar.appendChild(newDaftar);
+    };
+
+    kontenDaftar.firstElementChild.remove();
+    
+    // SOAL 4
+    function changeColor() {
+        const color = prompt("Masukkan Warna Baru");
+        const colorBox = document.getElementById("colorBox");
+        if (color === "red" || color === "green" || color === "blue" || color === "yellow" || color === "black" || color === "white" || color === "purple" || color === "orange" || color === "pink" || color === "brown" || color === "gray" || color === "cyan" || color === "magenta") {
+            colorBox.style.color = color;
+        } else {
+            alert("Warna Tidak Valid. Silahkan masukkan warna yang benar!");
+        }
+    }
+
+  </script>
+</html>

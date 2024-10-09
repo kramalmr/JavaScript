@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="tarikDOM"><b> Hello, World!</b></div>
+    <div class="hello">Rooooawwwrr🦖</div>
+    <div class="hello">Miiiaaaawww🐈</div>
+    <script>
+      // TARIK DOM DAN MENGUBAH
+      const tarikDOM = document.getElementById("tarikDOM");
+      console.log(tarikDOM);
+      console.log(tarikDOM.innerHTML);
+      console.log(tarikDOM.innerText);
+      console.log(tarikDOM.textContent);
+
+      tarikDOM.innerHTML = "Hello, Akrom!";
+
+      let tarikDOM2 = document.querySelector(".hello");
+      console.log(tarikDOM2);
+
+      let tarikDOM3 = document.querySelectorAll(".hello");
+      console.log(tarikDOM3);
+      console.log(tarikDOM3[1]);
+      console.log(tarikDOM3[0]);
+
+      // MENAMBAHKAN DAM MENGURANGI
+      const newElement = document.createElement("p");
+
+      newElement.innerText = "New Element Akrom!!!!!!";
+      tarikDOM.appendChild(newElement);
+
+      tarikDOM.removeChild(newElement);
+    </script>
+  </body>
+</html>
