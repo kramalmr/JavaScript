@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akram TUGAS 17 LATIHAN</title>
+</head>
+<body>
+    <div align="center" id="div1">
+        <button class="button">BUTTON1</button>
+        <button class="button">BUTTON2</button>
+        <button id="target" class="button">BUTTON3</button>
+    </div>
+</body>
+<script>
+    const div1 = document.getElementById('div1');
+    const button = document.querySelectorAll('.button');
+    button[0].setAttribute('onclick', 'alert("Hello World")');
+    button[1].style.borderRadius = "50px"; 
+    button[2].style.width = "100px";
+    button[2].style.height = "100px";
+
+    const newButton = document.createElement('button');
+    newButton.innerText = "BUTTONNEW";
+
+    const target = document.getElementById('target');
+    div1.insertBefore(newButton, target);
+
+    const newButton2 = document.createElement('button');
+    newButton2.innerText = "BUTTONNEW2";
+    div1.appendChild(newButton2);
+
+</script>
+</html>

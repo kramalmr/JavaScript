@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKRAM TUGAS 17</title>
+  </head>
+  <body>
+    <!-- SOAL 1 -->
+    <img id="myImage" />
+
+    <!-- SOAL 2 -->
+    <button class="myButton">my button</button>
+
+    <!-- SOAL 3 dan 4 -->
+    <ul id="myList"></ul>
+
+    <!-- SOAL 5 -->
+    <id id="imageContainer">
+
+    </id>
+  </body>
+  <script>
+    //  SOAL 1
+    const myImage = document.getElementById("myImage");
+    myImage.setAttribute("src", "https://picsum.photos/id/200/300");
+
+    // SOAL 2
+    const myButton = document.querySelector(".myButton");
+    myButton.style.borderRadius = "25px";
+    myButton.style.backgroundColor = "green";
+
+    // SOAL 3 DAN 4
+    const myList = document.getElementById("myList");
+    const newList = document.createElement("li");
+    newList.innerText = "Item Baru";
+    myList.appendChild(newList);
+
+    const newList2 = document.createElement("li");
+    newList2.innerText = "Item Disisipkan";
+    myList.insertBefore(newList2, newList);
+
+    // SOAL 5
+    const imageContainer = document.getElementById("imageContainer");
+    const newImage = document.createElement("img");
+    newImage.setAttribute("src", "https://picsum.photos/id/200/300");
+    newImage.style.borderRadius = "50%";
+    imageContainer.appendChild(newImage);
+  </script>
+</html>
