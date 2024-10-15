@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 18 MUHAMMAD AKRAM ALMAIR</title>
+    <style>
+      button {
+        width: 100px;
+        height: 50px;
+      }
+      .box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body >
+    <!-- SOAL 1 -->
+    <button id="btn">
+      <b>SOAL 1</b>
+    </button>
+
+    <!-- SOAL 2 -->
+    <button id="myButton">
+      <b>SOAL 2</b>
+    </button>
+  </body>
+
+  <!-- SOAL 3 -->
+  <div class="box" align="center">
+    <h3>The "Accurate" amount of times you have pressed the button</h3>
+    <p id="counter"></p>
+    <button id="btnCounter">Click</button>
+  </div>
+
+  <!-- SOAL 4 -->
+  <div align="center">
+    <button
+      id="btnName"
+      style="background-color: brown; color: white; border-color: white"
+    >
+      Klik Saya!
+    </button>
+  </div>
+  <script>
+      
+      // SOAL 1
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", function () {
+          alert("Tombol Berhasil Diklik!");
+    });
+
+    // SOAL 2
+    const myButton = document.getElementById("myButton");
+    function buttonListener() {
+      myButton.addEventListener("click", showAlert);
+    };
+
+    function showAlert() {
+      alert("Hello World");
+    }
+    
+    // SOAL 3
+    const btnCounter = document.getElementById("btnCounter");
+    const counter = document.getElementById("counter");
+    let count = 0;
+    counter.innerHTML = count;
+    
+    btnCounter.addEventListener("click", function () {
+      counter.innerHTML = count++;
+    });
+
+    // SOAL 4
+    let name;   
+    function startProgram() {
+      const confirmFirst = confirm("Apakah Anda ingin melanjutkan?");
+      if (confirmFirst) {
+        alert("Selamat datang di Halaman!");
+        askName();
+    } else {
+        alert("Anda memilih untuk tidak melanjutkan!");
+      }
+    }
+
+    function askName() {
+      const nameUser = prompt("Siapa Namamu?");
+      if (nameUser === null || nameUser === "") {
+        confirm("Apakah Anda ingin mencoba lagi?")
+          ? askName()
+          : alert("Terima Kasih!");
+      } else {
+          name = nameUser;
+        }
+    }
+
+    const btnName = document.getElementById("btnName");
+    btnName.addEventListener("click", function () {
+      if (name === "" || name === undefined) {
+        alert("Kamu tidak memasukkan nama!");
+        confirm("Apakah Anda ingin mengisi nama?")
+          ? askName()
+          : alert("Terima Kasih!");
+        } else {
+            alert("Hello " + name + "!");
+        }
+    });
+    btnName.innerText = "Tampilkan Pesan!";
+    window.onload = startProgram(), buttonListener();
+    </script>
+</html>

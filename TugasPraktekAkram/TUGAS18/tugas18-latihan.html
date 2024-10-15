@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 18 LATIHAN AKRAM</title>
+    <style>
+      .box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <!-- 1 & 2 -->
+  <body onload="loaded()" align="center">
+    <button onclick="clicked()">CLICK</button>
+    <!-- 3 -->
+    <div class="box" align="center">
+      <h1>INCREMENT AND DECREMENT</h1>
+      <button onclick="increment()">^</button>
+      <h1 id="counter"></h1>
+      <button onclick="decrement()" style="display: block">v</button>
+      <div hidden id="imagehide">
+        <img
+          src="https://cataas.com/cat"
+          alt="cat"
+          height="200px"
+          style="margin-top: 12px"
+        />
+        <h4>You have found a secret number!</h4>
+      </div>
+    </div>
+  </body>
+  <script>
+    function loaded() {
+        alert("Page Loaded!")
+    };
+
+    function clicked() {
+      alert("Clicked!");
+    }
+
+    const counter = document.getElementById("counter");
+    const imageHidden = document.getElementById("imagehide");
+    let count = 0;
+    counter.innerHTML = count;
+
+    function increment() {
+      count = count + 1;
+      counter.innerHTML = count;
+      if (count == 12) {
+        imageHidden.removeAttribute("hidden");
+      } else {
+        imageHidden.setAttribute("hidden", true);
+      }
+    }
+
+    function decrement() {
+      count = count - 1;
+      counter.innerHTML = count;
+      if (count == 12) {
+        imageHidden.removeAttribute("hidden");
+      } else {
+        imageHidden.setAttribute("hidden", true);
+      }
+    }
+
+    // CARA ALTERNATIVE SINGKAT
+    // const counter = document.getElementById("counter");
+    // let count = 0;
+    // counter.innerHTML = count;
+
+    // const update = (delta) => (counter.innerHTML = count += delta);
+    // const increment = () => update(1);
+    // const decrement = () => update(-1);
+  </script>
+</html>
