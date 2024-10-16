@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 19 AKRAM</title>
+  </head>
+  <body>
+    <!-- SOAL 1 -->
+    <button id="triggerButton">TRIGGER CUSTOM EVENT</button>
+    <hr />
+    <!-- SOAL 2 -->
+    <div id="parent">
+      <button id="myButton">Click Me!</button>
+    </div>
+  </body>
+  <script>
+    // SOAL 1
+    const clickEvent = new Event("customClickEvent");
+
+    function customHandleClick() {
+      console.log("Custom Click Event Triggered!");
+      alert("Custom Click Event Triggered!");
+    }
+
+    window.addEventListener("load", function () {
+      const triggerButton = document.getElementById("triggerButton");
+      triggerButton.addEventListener("customClickEvent", customHandleClick);
+      triggerButton.addEventListener("click", function () {
+        triggerButton.dispatchEvent(clickEvent);
+      });
+    });
+
+    // SOAL 2
+    const buttonClicked = new Event("buttonClickedEvent");
+
+    function handleButtonClick() {
+      console.log("Button Was Clicked!");
+      alert("Button Was Clicked!");
+    };
+
+    function handleParentClick() {
+      console.log("Parent div received the Event!");
+      alert("Parent div received the Event!");
+    };
+
+    window.addEventListener("load", function () {
+      const myButton = document.getElementById("myButton");
+      myButton.addEventListener("buttonClickedEvent", handleButtonClick);
+      myButton.addEventListener("buttonClickedEvent", handleParentClick);
+      myButton.addEventListener("click", function () {
+        myButton.dispatchEvent(buttonClicked);
+      });
+    });
+  </script>
+</html>

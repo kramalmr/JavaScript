@@ -19,7 +19,7 @@
       }
     </style>
   </head>
-  <body >
+  <body>
     <!-- SOAL 1 -->
     <button id="btn">
       <b>SOAL 1</b>
@@ -32,8 +32,8 @@
   </body>
 
   <!-- SOAL 3 -->
-  <div class="box" align="center">
-    <h3>The "Accurate" amount of times you have pressed the button</h3>
+  <div class="box" align="center" style="width: 200px;">
+    <h3>SOAL 3</h3>
     <p id="counter"></p>
     <button id="btnCounter">Click</button>
   </div>
@@ -48,41 +48,40 @@
     </button>
   </div>
   <script>
-      
-      // SOAL 1
-      const btn = document.getElementById("btn");
-      btn.addEventListener("click", function () {
-          alert("Tombol Berhasil Diklik!");
+    // SOAL 1
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", function () {
+      alert("Tombol Berhasil Diklik!");
     });
 
     // SOAL 2
     const myButton = document.getElementById("myButton");
     function buttonListener() {
       myButton.addEventListener("click", showAlert);
-    };
+    }
 
     function showAlert() {
       alert("Hello World");
     }
-    
+
     // SOAL 3
     const btnCounter = document.getElementById("btnCounter");
     const counter = document.getElementById("counter");
     let count = 0;
-    counter.innerHTML = count;
-    
+    counter.innerHTML = "<b>The Accurate amount of times you have pressed the button is </b>" +count;
+
     btnCounter.addEventListener("click", function () {
-      counter.innerHTML = count++;
+      counter.innerHTML = "<b>The Accurate amount of times you have pressed the button is </b>" + count++;
     });
 
     // SOAL 4
-    let name;   
+    let name;
     function startProgram() {
       const confirmFirst = confirm("Apakah Anda ingin melanjutkan?");
       if (confirmFirst) {
         alert("Selamat datang di Halaman!");
         askName();
-    } else {
+      } else {
         alert("Anda memilih untuk tidak melanjutkan!");
       }
     }
@@ -94,8 +93,8 @@
           ? askName()
           : alert("Terima Kasih!");
       } else {
-          name = nameUser;
-        }
+        name = nameUser;
+      }
     }
 
     const btnName = document.getElementById("btnName");
@@ -105,11 +104,11 @@
         confirm("Apakah Anda ingin mengisi nama?")
           ? askName()
           : alert("Terima Kasih!");
-        } else {
-            alert("Hello " + name + "!");
-        }
+      } else {
+        alert("Hello " + name + "!");
+      }
     });
     btnName.innerText = "Tampilkan Pesan!";
-    window.onload = startProgram(), buttonListener();
-    </script>
+    (window.onload = startProgram()), buttonListener();
+  </script>
 </html>

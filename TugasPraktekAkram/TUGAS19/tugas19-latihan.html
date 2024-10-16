@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 19 Akram Almair</title>
+</head>
+<body>
+    <!-- CUSTOM EVENT -->
+    <div style="padding: 50px;" align="center">
+        <p id="caption">Click the Button below to trigger the Custom Event!</p>
+        <button id="btnEvCustom">CUSTOM EVENT</button>
+    </div>
+    <hr>
+
+    <!-- BUBBLING AND CAPTURING -->
+    <div style="padding: 50px;" align="center">
+        <div id="boxLuar" style="width: 50%; height: 250px; border: 1px solid black; padding: 10px;">
+            LUAR
+            <div id="boxDalam" style="width: 80%; height: 150px; border: 1px solid black; padding: 10px;">
+                DALAM
+                
+            </div>
+        </div>
+</body>
+<script>
+    // CUSTOM EVENT!
+    const EvCustom = new Event("customEvent");
+
+    window.addEventListener("load", function (){
+        const btnEvCustom = document.getElementById("btnEvCustom");
+        btnEvCustom.addEventListener("customEvent", customEventHandler)
+        btnEvCustom.addEventListener("click", function(){
+            btnEvCustom.dispatchEvent(EvCustom);
+        })
+    });
+    
+    function customEventHandler(){
+        alert("You Have Triggered the Custom Event!")
+        const caption = document.getElementById("caption");
+        caption.innerText = "YOU HAVE CLICKED THE BUTTON!";
+        btnEvCustom.innerText = "YOU HAVE CLICKED ME!";
+        btnEvCustom.style.color = "red";
+        btnEvCustom.style.backgroundColor = "blue";
+    }
+
+    // BUBBLING AND CAPTURING
+    document.getElementById("boxLuar").addEventListener("click", function(){
+        alert("LUAR")
+    }, true) //TRUE UNTUK CAPTURING!
+
+    document.getElementById("boxDalam").addEventListener("click", function(){
+        alert("DALAM")
+    })
+
+    // BUBBLING KELUAR
+    // CAPTURING KE DALAM
+</script>
+</html>
