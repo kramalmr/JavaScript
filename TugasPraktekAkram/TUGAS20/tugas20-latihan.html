@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKRAM TUGAS 20 LATIHAN</title>
+  </head>
+  <body>
+    <img id="cat" width="30%" hidden src="https://cataas.com/cat" alt="Image of a cat">
+    <p id="text1">First Text (hover over the text)</p>
+    <p>Press <b>SPACE</b> to get cat </p>
+    <p href="">this is a <a id="link" href="google.com"><b>link</b></a> to google web which doesnt work as its supposed to</p>
+
+    <script>
+        
+        const text1 = document.getElementById("text1") ;
+        text1.addEventListener("mouseover", function(){
+            text1.style.color = "red";
+            text1.innerHTML = "<b>Second Text</b>";
+        })
+        text1.addEventListener("mouseout", function(){
+            text1.style.color = "black";
+            text1.innerText = "First Text";
+        })
+        
+        document.addEventListener("keydown", function(){
+            if(event.key == " "){
+                document.getElementById("cat").hidden = false;
+            }
+        })
+        document.addEventListener("keyup", function(){
+            document.getElementById("cat").hidden = true;
+        })
+
+        document.getElementById("link").addEventListener("click", function(){
+            event.preventDefault();
+            alert("This link is is limited by preventDefault()");
+        })
+
+        
+    </script>
+  </body>
+</html>

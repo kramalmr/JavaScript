@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 19 MUHAMMAD AKRAM ALMAIR</title>
+    <style>
+      .formParent {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+      }
+      .formContent {
+        width: 300px;
+        height: auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        align-items: start;
+      }
+
+      .formElement {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+      }
+
+      input {
+        width: 95%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SOAL 1 -->
+      <div class="formParent">
+          <h3>FORM DATA DIRI! (SOAL 1)</h3>
+          <div class="formContent">
+              <form action="" id="formDataDiri">
+                  <div class="formElement">
+                      <label for="inputName">Name :</label>
+                      <input type="text" id="inputName" autocomplete="off" placeholder="Your Name" />
+                    </div>
+                    <div class="formElement">
+            <label for="inputEmail">Email :</label>
+            <input type="email" id="inputEmail" autocomplete="off" placeholder="Your Email" />
+          </div>
+          <div class="formElement" align="center">
+            <input id="submitButton" type="submit" value="Kirim"/>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- SOAL 2 -->
+    <p id="text1">TEKS INI SOAL 2</p>
+    <script>
+        // SOAL 2
+        document.getElementById("formDataDiri").addEventListener("submit", function () {
+            const valueName = document.getElementById("inputName").value;
+            const valueEmail = document.getElementById("inputEmail").value;
+
+            if (valueName !== "" && valueEmail !== "") {
+                alert(`Halo ${valueName} email anda ${valueEmail}`);
+            } else {
+                alert("Form belum terisi");
+            }
+            event.preventDefault();
+        })
+        // SOAL 2
+        const text1 = document.getElementById("text1") ;
+        text1.addEventListener("mouseover", function(){
+            text1.style.color = "red";
+            text1.innerHTML = "<b>TEKS INI SOAL 2</b>";
+        })
+        text1.addEventListener("mouseout", function(){
+            text1.style.color = "black";
+            text1.innerText = "TEKS INI SOAL 2";
+        })
+        
+    </script>
+  </body>
+</html>
