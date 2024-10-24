@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .plus-jakarta-sans {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+
+      .formElement {
+        margin-bottom: 20px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body class="bg-black text-white plus-jakarta-sans pt-20">
+    <div class="w-full h-auto">
+      <div
+        class="w-[70%] max-w-[750px] bg-[#FE6902] mx-auto rounded-[40px] py-12 px-20"
+      >
+        <div class="text-3xl font-medium mb-10">Add new Task</div>
+        <div class="formTask">
+          <form action="" id="formNewTask">
+            <div class="formElement">
+              <label class="block mb-2" for="inputTask">Masukan Task</label>
+              <input
+                class="block rounded-lg py-2 px-4 w-[60%] text-black"
+                type="text"
+                id="inputTask"
+                autocomplete="off"
+                placeholder="Input Task"
+                onfocus="this.value=''"
+              />
+            </div>
+            <div class="formElement">
+              <label class="block mb-2" for="inputDate"
+                >Tanggal Penyelesaian</label
+              >
+              <input
+                class="block rounded-lg py-2 px-4 w-[40%] text-black"
+                type="date"
+                id="inputDate"
+                autocomplete="off"
+                placeholder="Input Date"
+                onfocus="this.value=''"
+              />
+            </div>
+            <div class="formElement float-right">
+              <input
+                class="bg-white w-16 h-16 rounded-full text-black text-4xl text-center pb-1 font-light cursor-pointer"
+                id="submitButton"
+                type="submit"
+                value="+"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        id="nav"
+        class="w-[70%] max-w-[750px] bg-[#FE6902] mx-auto rounded-[40px] mt-10 mb-6 flex h-16"
+      >
+        <button
+          id="allTasks"
+          class="h-full flex-auto w-4/12 text-center items-center flex justify-center bg-[#FE6902] rounded-l-full"
+          onclick="showAll()"
+        >
+          <b>All Tasks</b>
+          <img class="w-5 ml-3" src="assets/note-alt.png" alt="" />
+        </button>
+        <button
+          id="incomplete"
+          class="h-full flex-auto w-4/12 bg-white text-[#FE6902] text-center items-center flex justify-center"
+          onclick="showIncomplete()"
+        >
+          Uncompleted
+          <img class="w-5 ml-3" src="assets/hexagon-exclamation.png" alt="" />
+        </button>
+        <button
+          id="complete"
+          class="h-full flex-auto w-4/12 bg-white text-[#FE6902] rounded-r-full text-center items-center flex justify-center"
+          onclick="showComplete()"
+        >
+          Completed
+          <img class="w-5 ml-3" src="assets/octagon-check.png" alt="" />
+        </button>
+      </div>
+      <div id="showTask" class="w-full h-auto">
+        
+      </div>
+
+      <div
+          id="newTask"
+          class="w-[70%] max-w-[750px] bg-[#1B1B1B] mx-auto rounded-[40px] py-6 px-10 flex justify-between mb-5 tabTask"
+          style="display: none"
+        >
+          <div>
+            <p class="text-lg textTask">The Task</p>
+            <p class="text-sm textDate">Date</p>
+          </div>
+          <button
+            id="checkComplete"
+            class="w-12 h-12 rounded-full border-white border-2 p-2 buttonClearTask hover:bg-white hover:border-0 group"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-check w-full group-hover:text-[#FE6902]"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+              />
+            </svg>
+          </button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
