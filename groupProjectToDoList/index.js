@@ -75,6 +75,8 @@ document
     const newDateValue = document.getElementById("inputDate").value;
     const createTask = document.createElement("div");
     const buttonClearTask = newTask.getElementsByClassName("buttonClearTask")[0];
+    const buttonRestoreTask = newTask.getElementsByClassName("buttonRestoreTask")[0];
+    const buttonDeleteTask = newTask.getElementsByClassName("buttonDeleteTask")[0];
     
     // newTask.style.removeProperty("display");
     createTask.removeAttribute("id");
@@ -82,7 +84,9 @@ document
     createTask.classList.add("tabTaskOuter");
     // newTask.classList.add("incomplete");
     buttonClearTask.removeAttribute("id");
-    buttonClearTask.setAttribute("onclick", `deleteTask(${idTask})`);
+    buttonClearTask.setAttribute("onclick", `clearTask(${idTask})`);
+    buttonRestoreTask.setAttribute("onclick", `restoreTask(${idTask})`);
+    buttonDeleteTask.setAttribute("onclick", `deleteTask(${idTask})`);
     newTask.getElementsByClassName("textTask")[0].innerText = newTaskValue;
     newTask.getElementsByClassName("textDate")[0].innerText = newDateValue;
     createTask.style.display = "flex";
@@ -102,28 +106,36 @@ document
     document.getElementById("inputTask").value = "";
   });
 
-function deleteTask(id) {
+function clearTask(id) {
   const task = document.getElementById(`task-${id}`);
   task.classList.add("completed");
   task.classList.remove("incomplete");
+  task.getElementsByClassName("buttonClearTask")[0].style.display = "none";
+  task.getElementsByClassName("buttonRestoreTask")[0].style.display = "inline";
+  task.getElementsByClassName("buttonDeleteTask")[0].style.display = "inline";
+  task.getElementsByClassName("textCompleted")[0].style.display = "inline";
   sortTasks();
   console.log("Task completed:", task);
 }
 
-// allTabTasks.forEach((task) => {
-//   const buttonClearTask = task.querySelector(".buttonClearTask"); // Menggunakan querySelector untuk kejelasan
-//   if (buttonClearTask) {
-//     buttonClearTask.addEventListener("click", function () {
-//       task.classList.remove("incomplete");
-//       task.classList.add("completed");
-//       sortTasks();
-//       console.log("Task completed:", task); // Log untuk debugging
-//     });
-//   } else {
-//     console.warn("Clear button not found for task:", task); // Peringatan jika tombol tidak ditemukan
-//   }
-// });
+function restoreTask(id) {
+  const task = document.getElementById(`task-${id}`);
+  task.classList.add("incomplete");
+  task.classList.remove("completed");
+  task.getElementsByClassName("buttonClearTask")[0].style.display = "inline";
+  task.getElementsByClassName("buttonRestoreTask")[0].style.display = "none";
+  task.getElementsByClassName("buttonDeleteTask")[0].style.display = "none";
+  task.getElementsByClassName("textCompleted")[0].style.display = "none";
+  sortTasks();
+  console.log("Task restored:", task);
+}
 
+function deleteTask(id) {
+  const task = document.getElementById(`task-${id}`);
+  task.remove()
+  sortTasks();
+  console.log("Task deleted:", task);
+}
 // COMPLETE TASK
 
 // SORT TASK
@@ -152,43 +164,3 @@ function sortTasks() {
     });
   }
 }
-// function sortTasks() {
-//   const incompleteTasks = showTask.querySelectorAll(".incomplete");
-//   const completeTasks = showTask.querySelectorAll(".completed");
-//   if (visibleTasks === "all") {
-//     showAll();
-//   } else if (visibleTasks === "incomplete") {
-//     showIncomplete();
-//   } else {
-//     showComplete();
-//   }
-// }
-
-// function showAll() {
-//   const allTasks = showTask.querySelectorAll(".tabTask");
-//   allTasks.forEach(task => {
-//     task.style.display = "flex";
-//   });
-// }
-
-// function showIncomplete() {
-
-//   incompleteTasks.forEach(task => {
-//     task.style.display = "flex";
-//   });
-//   completeTasks.forEach(task => {
-//     task.style.display = "none";
-//   });
-// }
-
-// function showComplete() {
-//   const incompleteTasks = showTask.querySelectorAll(".incomplete");
-//   const completeTasks = showTask.querySelectorAll(".completed");
-
-//   incompleteTasks.forEach(task => {
-//     task.style.display = "none";
-//   });
-//   completeTasks.forEach(task => {
-//     task.style.display = "flex";
-//   });
-// }
