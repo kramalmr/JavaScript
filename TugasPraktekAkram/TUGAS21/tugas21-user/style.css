@@ -1,0 +1,174 @@
+body {
+  padding-right: 20px;
+  margin: 0%;
+  background-color: black;
+}
+
+header h3 {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+#containerBookForm {
+  width: 780px;
+  min-width: 400px;
+  height: auto;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+  padding-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 45px;
+  background-color: #FE6902;
+  border: 0px;
+  border-radius: 45px;
+  text-align: center;
+  color: white;
+}
+
+#bookForm {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.inputFormText {
+  width: 97%;
+  height: 20px;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: 0px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  color: black;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#bookFormSubmit {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0px;
+}
+
+#bookFormSubmit:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#bookShelfContainer {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  min-width: 400px;
+  height: auto;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+  justify-content: space-between;
+}
+
+.bookShelf {
+  width: 380px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookShelf h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.bookList {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 25px;
+  border: 0px;
+  margin-bottom: 16px;
+  width: 100%;
+  height: auto;
+  background-color: whitesmoke;
+  color: black;
+}
+
+.bookItem {
+  text-align: left;
+  background-color: #FE6902;
+  color: white;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  border-radius: 25px;
+  border: 0px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.bookItem h3 {
+  text-align: left;
+}
+
+.bookList .action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookList .action button {
+  width: 100%;
+  border-radius: 10px;
+  border: 0px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.bookList .action button.delete:hover {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.bookList .action button.complete:hover {
+  background-color: rgb(0, 255, 0);
+  color: black;
+  font-weight: bold;
+}
+
+.line {
+  align-self: center;
+  width: 80%;
+  height: 0.5px;
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
