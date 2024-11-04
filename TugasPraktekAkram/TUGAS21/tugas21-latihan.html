@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COBACOBA LOCAL STORAGE</title>
+    <style>
+      .box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+      }
+    </style>
+  </head>
+    <div class="box" align="center">
+      <h1>INCREMENT AND DECREMENT</h1>
+      <button onclick="increment()">^</button>
+      <h1 id="counter"></h1>
+      <button onclick="decrement()" style="display: block">v</button>
+      <div hidden id="imagehide">
+        <img
+          src="https://cataas.com/cat/gif"
+          alt="cat"
+          height="200px"
+          style="margin-top: 12px"
+        />
+        <h4>You have found my secret number!</h4>
+      </div>
+    </div>
+  </body>
+  <script>
+      function updateCounterDisplay(value) {
+            document.getElementById('counter').innerText = value;
+            if (value === 12) {
+                document.getElementById('imagehide').hidden = false
+            } else {
+                document.getElementById('imagehide').hidden = true
+            }
+        }
+
+        function getCounterValue() {
+            const storedValue = localStorage.getItem('counterValue');
+            return storedValue ? parseInt(storedValue, 10) : 0;
+        }
+
+        function setCounterValue(value) {
+            localStorage.setItem('counterValue', value);
+        }
+
+        let counter = getCounterValue();
+        updateCounterDisplay(counter);
+
+        function increment() {
+            counter++;
+            setCounterValue(counter);
+            updateCounterDisplay(counter);
+        };
+
+        function decrement() {
+            counter--;
+            setCounterValue(counter);
+            updateCounterDisplay(counter);
+        };
+  </script>
+</html>

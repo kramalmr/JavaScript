@@ -82,7 +82,6 @@ document
     createTask.removeAttribute("id");
     createTask.setAttribute("id", `task-${idTask}`);
     createTask.classList.add("tabTaskOuter");
-    // newTask.classList.add("incomplete");
     buttonClearTask.removeAttribute("id");
     buttonClearTask.setAttribute("onclick", `clearTask(${idTask})`);
     buttonRestoreTask.setAttribute("onclick", `restoreTask(${idTask})`);
@@ -101,9 +100,12 @@ document
     }
 
     idTask++;
+    localStorage.setItem("idTask", idTask);
+    sortTasks();
     event.preventDefault();
     document.getElementById("inputDate").value = "";
     document.getElementById("inputTask").value = "";
+
   });
 
 function clearTask(id) {
